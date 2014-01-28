@@ -41,7 +41,7 @@ namespace MonopolyTest
 		[Test]
 		public void names_should_be_shuffled ()
 		{
-			int status = 0;
+			int [] status = {0, 0};
 			for (int i = 0; i < 100; i++)
 			{
 				Game game = new Game ();
@@ -49,13 +49,12 @@ namespace MonopolyTest
 				game.AddPlayer ("Car");
 
 				List<string> names = game.GetPlayerNames();
-				if(names[0] == "Horse" && names[1] == "Car") status++;
-				if(names[0] == "Car" && names[1] == "Horse") status++;
-
-				if(status == 2) break;
+				if(names[0] == "Horse" && names[1] == "Car") status[0] = 1;
+				if(names[0] == "Car" && names[1] == "Horse") status[1] = 1;
 			}
 
-			Assert.AreEqual(2, status);
+			Assert.AreEqual(1, status[0]);
+			Assert.AreEqual(1, status[1]);
 
 		}
 
