@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonopolySharp", "MonopolySharp\MonopolySharp.csproj", "{D1F47C15-3379-48CA-8AF0-186A39CB4D45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonopolyTest", "MonopolyTest\MonopolyTest.csproj", "{1C216486-597E-45E5-8F99-BA701B1F2940}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C216486-597E-45E5-8F99-BA701B1F2940}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1C216486-597E-45E5-8F99-BA701B1F2940}.Debug|x86.Build.0 = Debug|Any CPU
+		{1C216486-597E-45E5-8F99-BA701B1F2940}.Release|x86.ActiveCfg = Release|Any CPU
+		{1C216486-597E-45E5-8F99-BA701B1F2940}.Release|x86.Build.0 = Release|Any CPU
+		{D1F47C15-3379-48CA-8AF0-186A39CB4D45}.Debug|x86.ActiveCfg = Debug|x86
+		{D1F47C15-3379-48CA-8AF0-186A39CB4D45}.Debug|x86.Build.0 = Debug|x86
+		{D1F47C15-3379-48CA-8AF0-186A39CB4D45}.Release|x86.ActiveCfg = Release|x86
+		{D1F47C15-3379-48CA-8AF0-186A39CB4D45}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MonopolySharp\MonopolySharp.csproj
+	EndGlobalSection
+EndGlobal

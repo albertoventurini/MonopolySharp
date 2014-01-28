@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="/home/alberto/Devel/C#/MonopolySharp/MonopolyTest/bin/Debug/MonopolyTest.dll" total="12" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-01-28" time="16:40:26">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.1433" os-version="Unix 3.11.0.12" platform="Unix" cwd="/home/alberto/Devel/C#/MonopolySharp/MonopolyTest/bin/Debug" machine-name="rigel" user="alberto" user-domain="rigel" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="/home/alberto/Devel/C#/MonopolySharp/MonopolyTest/bin/Debug/MonopolyTest.dll" executed="True" result="Success" success="True" time="0.080" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="MonopolyTest" executed="True" result="Success" success="True" time="0.073" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="BoardTest" executed="True" result="Success" success="True" time="0.039" asserts="0">
+            <results>
+              <test-case name="MonopolyTest.BoardTest.advancing_on_board_should_succeed" executed="True" result="Success" success="True" time="0.021" asserts="1" />
+              <test-case name="MonopolyTest.BoardTest.getting_start_cell_should_succeed" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+              <test-case name="MonopolyTest.BoardTest.setting_up_new_board_should_succeed" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="DieTest" executed="True" result="Success" success="True" time="0.006" asserts="0">
+            <results>
+              <test-case name="MonopolyTest.DieTest.test_fixed_die" executed="True" result="Success" success="True" time="0.001" asserts="50" />
+              <test-case name="MonopolyTest.DieTest.test_regular_die" executed="True" result="Success" success="True" time="0.004" asserts="100" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="GameTest" executed="True" result="Success" success="True" time="0.014" asserts="0">
+            <results>
+              <test-case name="MonopolyTest.GameTest.create_a_game_with_two_players" executed="True" result="Success" success="True" time="0.004" asserts="2" />
+              <test-case name="MonopolyTest.GameTest.names_should_be_shuffled" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="MonopolyTest.GameTest.number_of_played_rounds_should_be_twenty" executed="True" result="Success" success="True" time="0.001" asserts="3" />
+              <test-case name="MonopolyTest.GameTest.order_of_players_should_not_change_at_each_round" executed="True" result="Success" success="True" time="0.001" asserts="40" />
+              <test-case name="MonopolyTest.GameTest.players_should_not_be_less_than_two_or_more_than_eight" executed="True" result="Success" success="True" time="0.002" asserts="2" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="PlayerTest" executed="True" result="Success" success="True" time="0.004" asserts="0">
+            <results>
+              <test-case name="MonopolyTest.PlayerTest.player_on_thirtynine_rolls_six_and_should_end_up_in_five" executed="True" result="Success" success="True" time="0.002" asserts="1" />
+              <test-case name="MonopolyTest.PlayerTest.player_rolls_seven" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
