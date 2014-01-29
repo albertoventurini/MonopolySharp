@@ -1,6 +1,10 @@
 using System;
 using System.Collections.Generic;
 
+//
+// The Game class represents a Monopoly game.
+//
+
 
 namespace MonopolySharp
 {
@@ -19,8 +23,8 @@ namespace MonopolySharp
 
 			Player p = new Player(name, this);
 
-			// If there are already players,
-			// then add the player at a random position
+			/*
+			// If there are already players, add the player at a random position
 			if(players.Count != 0)
 			{
 				int rand_idx = ( new Random((int)DateTime.Now.Ticks).Next() ) % (players.Count + 1);
@@ -29,6 +33,11 @@ namespace MonopolySharp
 			else
 			// otherwise, just add the unique player to the list
 				players.Add(p);
+				*/
+
+			// The above can be simplified with the following two lines
+			int rand_idx = ( new Random((int)DateTime.Now.Ticks).Next() ) % (players.Count + 1);
+			players.Insert(rand_idx, p);
 
 			playerPositions.Add(p, board.Start());
 		}
