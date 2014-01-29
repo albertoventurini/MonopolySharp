@@ -2,6 +2,8 @@ using System;
 
 namespace MonopolySharp
 {
+	// RegularDie is a Die that has 6 faces and returns a random number when rolled
+
 	public class RegularDie : Die
 	{
 		public RegularDie () : base(6)
