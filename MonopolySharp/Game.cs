@@ -13,33 +13,19 @@ namespace MonopolySharp
 		public Game()
 		{
 			players = new List<Player>();
-			playerPositions = new Dictionary<Player, Cell>();
 			board = new Board(BoardSize);
 			die = new RegularDie();
 		}
 
 		public void AddPlayer(string name)
 		{
+			// Create a new player with initial position = 0
+			Player p = new Player(name, this, board.Start());
+			p.Position = 0;
 
-			Player p = new Player(name, this);
-
-			/*
-			// If there are already players, add the player at a random position
-			if(players.Count != 0)
-			{
-				int rand_idx = ( new Random((int)DateTime.Now.Ticks).Next() ) % (players.Count + 1);
-				players.Insert(rand_idx, p);
-			}
-			else
-			// otherwise, just add the unique player to the list
-				players.Add(p);
-				*/
-
-			// The above can be simplified with the following two lines
+			// Add player to the game, maintaining a random order
 			int rand_idx = ( new Random((int)DateTime.Now.Ticks).Next() ) % (players.Count + 1);
 			players.Insert(rand_idx, p);
-
-			playerPositions.Add(p, board.Start());
 		}
 
 		// Get the die
@@ -52,25 +38,6 @@ namespace MonopolySharp
 		public void SetDie(Die die)
 		{
 			this.die = die;
-		}
-
-		// Get an integer that represents the position of the player on the game board
-		public int GetPlayerPosition(Player p)
-		{
-			Cell cell = playerPositions[p];
-			return board.GetCellPosition(cell);
-		}
-
-		// Set the position of the player on the game board
-		public void SetPlayerPosition(Player p, int position)
-		{
-			playerPositions[p] = board.Advance(board.Start(), position);
-		}
-
-		// Advance the position of the player by 'increment' cells
-		public void AdvancePlayerPosition(Player p, int increment)
-		{
-			playerPositions[p] = board.Advance(playerPositions[p], increment);
 		}
 
 		// Play a full game
@@ -110,11 +77,17 @@ namespace MonopolySharp
 		}
 
 
+		public Board GetBoard()
+		{
+			return board;
+		}
+
+
 		private const int RoundsPerGame = 20;
 		private const int BoardSize = 40;
 
 		public List<Player> players;
-		private Dictionary<Player, Cell> playerPositions;
+		//private Dictionary<Player, Cell> playerPositions;
 		private Board board;
 		private Die die;
 		private int n_rounds;

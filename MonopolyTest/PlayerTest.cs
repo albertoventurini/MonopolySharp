@@ -18,7 +18,7 @@ namespace MonopolyTest
 			Player p = game.players[0];
 			p.RollDieAndAdvance();
 
-			Assert.AreEqual(7, game.GetPlayerPosition(p));
+			Assert.AreEqual(7, p.Position);
 		}
 
 		[Test]
@@ -31,10 +31,10 @@ namespace MonopolyTest
 
 			Player p = game.players[0];
 
-			game.SetPlayerPosition(p, 39);
+			p.Position = 39;
 			p.RollDieAndAdvance();
 
-			Assert.AreEqual(5, game.GetPlayerPosition(p));
+			Assert.AreEqual(5, p.Position);
 		}
 	}
 }
