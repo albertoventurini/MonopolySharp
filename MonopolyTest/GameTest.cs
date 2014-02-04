@@ -68,7 +68,7 @@ namespace MonopolyTest
 
 			game.Play();
 
-			Assert.AreEqual(20, game.GetRounds());
+			Assert.AreEqual(20, game.Rounds);
 
 			foreach(Player p in game.players)
 				Assert.AreEqual(20, p.GetRounds());

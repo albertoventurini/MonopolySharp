@@ -19,14 +19,55 @@ namespace MonopolySharp
 
 		public void AddPlayer(string name)
 		{
-			// Create a new player with initial position = 0
+			// Create a new player
 			Player p = new Player(name, this, board.Start());
-			p.Position = 0;
 
 			// Add player to the game, maintaining a random order
 			int rand_idx = ( new Random((int)DateTime.Now.Ticks).Next() ) % (players.Count + 1);
 			players.Insert(rand_idx, p);
 		}
+
+
+		// Play a full game
+		public void Play()
+		{
+			// Throw an exception if game is started with incorrect # of players
+			if(players.Count < 2 || players.Count > 8)
+				throw new Exception();
+
+			// Play rounds
+			for(int i = 0; i < RoundsPerGame; i++)
+				PlayRound();
+		}
+
+
+		// Play one round of the game
+		public void PlayRound()
+		{
+			foreach(Player p in players)
+				p.PlayRound();
+
+			n_rounds++;
+		}
+
+
+		// Return the list of player names
+		public List<string> GetPlayerNames()
+		{
+			List<string> names = new List<string>();
+
+			foreach(Player p in players)
+				names.Add(p.GetName());
+
+			return names;
+		}
+
+
+		public Board GetBoard()
+		{
+			return board;
+		}
+
 
 		// Get the die
 		public Die GetDie()
@@ -40,46 +81,10 @@ namespace MonopolySharp
 			this.die = die;
 		}
 
-		// Play a full game
-		public void Play()
+
+		public int Rounds
 		{
-			if(players.Count < 2 || players.Count > 8)
-				throw new Exception();
-
-			for(int i = 0; i < RoundsPerGame; i++)
-				PlayRound();
-		}
-
-		// Play one round of the game
-		public void PlayRound()
-		{
-			foreach(Player p in players)
-				p.PlayRound();
-
-			n_rounds++;
-		}
-
-		// Return the list of player names
-		public List<string> GetPlayerNames()
-		{
-			List<string> names = new List<string>();
-
-			foreach(Player p in players)
-				names.Add(p.GetName());
-
-			return names;
-		}
-
-		// Return the number of rounds that were played
-		public int GetRounds()
-		{
-			return n_rounds;
-		}
-
-
-		public Board GetBoard()
-		{
-			return board;
+			get { return n_rounds; }
 		}
 
 
@@ -87,7 +92,6 @@ namespace MonopolySharp
 		private const int BoardSize = 40;
 
 		public List<Player> players;
-		//private Dictionary<Player, Cell> playerPositions;
 		private Board board;
 		private Die die;
 		private int n_rounds;
