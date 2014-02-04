@@ -15,9 +15,15 @@ namespace MonopolySharp
 
 		public void RollDieAndAdvance ()
 		{
-			int increment = game.GetDie().Roll();
+			int incr = game.GetDie().Roll();
 
-			myCell = game.GetBoard().Advance(myCell, increment);
+			Board board = game.GetBoard();
+			for(int i = 0; i < incr; i++)
+			{
+				myCell = board.Advance(myCell, 1);
+
+				// if (myCell is GO) ...
+			}
 		}
 
 
@@ -27,30 +33,32 @@ namespace MonopolySharp
 			n_rounds++;
 		}
 
-		public string GetName()
-		{
-			return name;
-		}
-
-		public int GetRounds()
-		{
-			return n_rounds;
-		}
 
 
-		// Position property
+
+		// Properties
+
+
 		public int Position
 		{
-			get
-			{
-				return game.GetBoard().GetCellPosition(myCell);
-			}
-
+			get	{ return game.GetBoard().GetCellPosition(myCell); }
 			set
 			{
 				Board b = game.GetBoard();
 				myCell = b.Advance(b.Start(), value);
 			}
+		}
+
+
+		public string Name
+		{
+			get { return name; }
+		}
+
+
+		public int Rounds
+		{
+			get { return n_rounds; }
 		}
 
 

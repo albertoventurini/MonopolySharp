@@ -57,7 +57,7 @@ namespace MonopolySharp
 			List<string> names = new List<string>();
 
 			foreach(Player p in players)
-				names.Add(p.GetName());
+				names.Add(p.Name);
 
 			return names;
 		}
